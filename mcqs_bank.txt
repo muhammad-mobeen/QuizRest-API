@@ -1,0 +1,119 @@
+Which protocol is used for Socket Programming with UDP?
+UDP
+TCP
+HTTP
+FTP
+
+Which method is used to create a UDP socket in Python?
+socket(AF_INET, SOCK_DGRAM)
+socket(AF_INET, SOCK_STREAM)
+socket(AF_INET, SOCK_RAW)
+socket(AF_INET6, SOCK_DGRAM)
+
+Which of the following is a characteristic of UDP?
+Unreliable transmission
+Reliable transmission
+Connection-oriented
+Stream-oriented
+
+In UDP, which function is used to send a message?
+sendto()
+send()
+write()
+transmit()
+
+Which function is used to receive a message in UDP?
+recvfrom()
+receive()
+read()
+accept()
+
+Which header field is used to identify the port number in UDP?
+Destination port number
+Source IP address
+Destination IP address
+Source port number
+
+Which of the following is an advantage of UDP over TCP?
+Low latency
+Reliable transmission
+Congestion control
+High throughput
+
+Which of the following is an example of an application that uses UDP?
+Video conferencing
+File transfer protocol
+Email client
+Web browser
+
+Which of the following is a disadvantage of UDP?
+Unreliable transmission
+High overhead
+Connection-oriented
+Slow data transfer rate
+
+Which of the following is true about UDP?
+It does not establish a connection before data transfer.
+It guarantees packet delivery
+It guarantees packet ordering
+It uses a three-way handshake
+
+Which of the following is not a valid address family for UDP socket?
+AF_HTTP
+AF_INET
+AF_UNIX
+AF_PACKET
+
+Which of the following is not a valid socket type for UDP socket?
+SOCK_STREAM
+SOCK_DGRAM
+SOCK_RAW
+SOCK_PACKET
+
+Which of the following functions can be used to bind a UDP socket to a specific IP address and port number?
+bind()
+connect()
+listen()
+accept()
+
+Which of the following is not a valid parameter for the sendto() function in UDP socket programming?
+source address
+message
+flags
+destination address
+
+Which of the following is true about UDP packets?
+They can be lost or arrive out of order
+They are guaranteed to be delivered to the receiver
+They are guaranteed to arrive in the order in which they were sent
+They are always larger than TCP packets
+
+Which of the following is not a valid UDP socket option?
+SO_TCP_NODELAY
+SO_REUSEADDR
+SO_BROADCAST
+SO_KEEPALIVE
+
+Which of the following is not a valid method for handling packet loss in UDP socket programming?
+Retransmitting lost packets
+Using checksums to detect errors
+Discarding lost packets
+Implementing forward error correction
+
+Which of the following is an advantage of UDP over TCP in socket programming?
+Lower latency
+Better reliability
+Higher data transfer rate
+Connection-oriented
+
+Which of the following is a disadvantage of UDP over TCP in socket programming?
+Slower data transfer rate
+Higher overhead
+Limited packet size
+No support for multicasting
+
+Which of the following statements is true about multicast communication in UDP socket programming?
+It can be used for one-to-many communication
+It is not supported by UDP
+It can only be used for one-to-one communication
+It can be used for broadcast communication

@@ -1,11 +1,12 @@
 # QuizRest API
- A quiz API developed in Fast API Framework in Python. Assignment 2 of Computer Networks.
+ A quiz API developed in Fast API Framework in Python. Assignment 2 of Computer Networks.<br>
  Quiz Topic: Socket Programming in UDP
 
 ## How to run?
-First activate environment
+This app was developed in Python 3.11.3.<br>
+First install requirements by running following commands
 ```
-env/Scripts/activate
+pip install -r requirements.txt
 ```
 
 Now activate Uvicorn Server

@@ -1,5 +1,5 @@
 from typing import Union
-from fastapi import FastAPI, Response, status, HTTPException
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from ParserEngine import MCQsParser
 
@@ -34,7 +34,7 @@ def get_mcqs(number: int):
 
 
 @app.get("/{filename}/{number}")
-def get_mcqs(filename: str, number: int = 20):
+def get_file_mcqs(filename: str, number: int = 20):
     parser = MCQsParser(filename+".txt", number)
     response = parser.get_response()
 

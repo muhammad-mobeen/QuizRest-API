@@ -9,7 +9,8 @@ class MCQsParser:
     
 
     def get_response(self, type="dict"):
-        self.read_file()
+        if error := self.read_file():
+            return error
         if self.number < 20:
             self.bank["mcqs"] = self.bank["mcqs"][:self.number]
             self.bank["total_questions"] = len(self.bank["mcqs"])
@@ -28,8 +29,11 @@ class MCQsParser:
     
     
     def read_file(self):
-        with open(self.filepath) as f:
-            lines = f.readlines()
+        try:
+            with open(self.filepath) as f:
+                lines = f.readlines()
+        except Exception as e:
+            return "Error occured: {}".format(e)
         self.parse_file(lines)
 
 

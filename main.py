@@ -1,10 +1,9 @@
 from typing import Union
-from fastapi import FastAPI
+from fastapi import FastAPI, Response, status, HTTPException
 from fastapi.responses import HTMLResponse
 from ParserEngine import MCQsParser
 
 app = FastAPI()
-
 
 @app.get("/", response_class=HTMLResponse)
 def root():
@@ -21,13 +20,43 @@ def root():
     </html>
     """
 
-@app.get("/{number}")
-def read_root(number: int):
+@app.get("/{number}", status_code=200)
+def get_mcqs(number: int):
     parser = MCQsParser("mcqs_bank.txt", number)
     response = parser.get_response()
+    if response["total_questions"] < number:
+        raise HTTPException(
+            status_code=400, 
+            detail="Maximum number of MCQS requestable is 20"
+            )
     return response
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/{filename}/{number}")
+def get_mcqs(filename: str, number: int = 20):
+    parser = MCQsParser(filename+".txt", number)
+    response = parser.get_response()
+
+    # Check if file exists or not else throw Exception Response Code
+    if type(response) is not dict:
+        raise HTTPException(
+            status_code=404,
+            detail=response
+            )
+    
+    # Check if number of MCQS available else throw Exception Response Code
+    if response["total_questions"] < number:
+        raise HTTPException(
+            status_code=400, 
+            detail="Maximum number of MCQS requestable is 20"
+            )
+    
+    return response
+
+@app.get("/error", status_code=200)
+def error(response):
+    return response
+
+@app.get("/favicon.ico", status_code=400)
+def favicon_response():
+    return {"favicon": "Not Found"}

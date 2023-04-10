@@ -14,6 +14,7 @@ def root():
         </head>
         <body>
             <h1>Welcome to QuizREST API!</h1>
+            <h2>Quiz Topic: Socket Programming in UDP</h2>
             <p>Enter the number of MCQS in the URL you want to fetch</p>
             <p>Example: <a href="http://127.0.0.1:8000/5">http://127.0.0.1:8000/5</a> </p>
         </body>

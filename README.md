@@ -1,5 +1,6 @@
 # QuizRest API
- A quiz API developed in Fast API Framework in Python. Assignment 2 of Computer Networks.<br>
+ A quiz API developed in Fast API Framework in Python.<br>
+ Assignment 2 of Computer Networks.<br>
  Quiz Topic: Socket Programming in UDP
 
 ## How to run?
@@ -17,7 +18,7 @@ uvicorn main:app --reload
 Now you can go to hosted app url!
 
 ## How to use?
-You can get responses in following ways:-
+You can get responses in following ways:-<br>
 Both urls will return 5 MCQS
 
 ```
